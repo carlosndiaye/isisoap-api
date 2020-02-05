@@ -11,7 +11,7 @@
     <groupId>inc.kraken</groupId>
     <artifactId>isisoap</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>isisoap</name>
     <description>SOAP Webservices for JavaFX client</description>
 
