@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="gs_ws.kraken.inc"
+           targetNamespace="gs_ws.kraken.inc" elementFormDefault="qualified">
+
+    <xs:element name="getPersonByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="personId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getPersonByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="personInfo" type="tns:personInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="personInfo">
+        <xs:sequence>
+            <xs:element name="personId" type="xs:long"/>
+            <xs:element name="firstname" type="xs:string"/>
+            <xs:element name="lastname" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="getAllPersonsRequest">
+        <xs:complexType/>
+    </xs:element>    
+    <xs:element name="getAllPersonsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="personInfo" type="tns:personInfo" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>   
+    <xs:complexType name="serviceStatus">
+        <xs:sequence>
+            <xs:element name="statusCode" type="xs:string"/>
+            <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>     
+    <xs:element name="addPersonRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="firstname" type="xs:string"/>
+                <xs:element name="lastname" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="addPersonResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>            
+                <xs:element name="personInfo" type="tns:personInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updatePersonRequest">
+        <xs:complexType>
+            <xs:sequence>
+               <xs:element name="personInfo" type="tns:personInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updatePersonResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deletePersonRequest">
+        <xs:complexType>
+            <xs:sequence>
+               <xs:element name="personId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deletePersonResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>                   
+</xs:schema> 
