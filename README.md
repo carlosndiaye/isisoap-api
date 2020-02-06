@@ -9,6 +9,6 @@ This is a simple Spring boot JAX-WS api performing basic crud operations.
 mvn clean install
 ````
 
-# Deployment
+## Deployment
 
 This project is deployed on Heroku. You can access it from [this link](https://isisoap.herokuapp.com/)
